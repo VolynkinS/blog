@@ -123,6 +123,8 @@
                     </div>
                     <div class="col-md-4">
 
+                        {% include 'inc/_search_field.html' %}
+
                         {% get_popular 3 %}
 
                         {% get_tags_list %}
@@ -134,6 +136,7 @@
                                 <input type="submit" value="Subscribe">
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>

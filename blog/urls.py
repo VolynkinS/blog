@@ -8,4 +8,5 @@ urlpatterns = [
     path('category/<str:slug>/', views.PostsByCategory.as_view(), name='category'),
     path('post/<str:slug>/', views.ViewPost.as_view(), name='view_post'),
     path('tag/<str:slug>/', views.PostsByTag.as_view(), name='tag'),
+    path('search/', views.Search.as_view(), name='search'),
 ]

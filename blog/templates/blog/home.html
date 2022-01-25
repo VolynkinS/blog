@@ -46,9 +46,9 @@
                     <div class="single-post">
 
                         {% if post.photo %}
-                        <img src="{{ post.photo.url }}" alt="{{ post.title }}" width="300" height="201">
+                        <a href="{{ post.get_absolute_url }}"><img src="{{ post.photo.url }}" alt="{{ post.title }}" width="300" height="201">
                         {% else %}
-                        <img src="https://picsum.photos/id/1060/300/201/?blur=2" alt="{{ post.title }}" class="rounded mx-auto d-block">
+                        <a href="{{ post.get_absolute_url }}"><img src="https://picsum.photos/id/1060/300/201/?blur=2" alt="{{ post.title }}" class="rounded mx-auto d-block"></a>
                         {% endif %}
 
                         <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
