@@ -6,6 +6,6 @@ app_name = 'blog'
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('category/<str:slug>/', views.PostsByCategory.as_view(), name='category'),
-    # path('post/<str:slug>/', views.get_post, name='post'),
-    path('post/<int:post_id>/', views.get_post, name='post'),
+    path('post/<str:slug>/', views.ViewPost.as_view(), name='view_post'),
+    path('tag/<str:slug>/', views.PostsByTag.as_view(), name='tag'),
 ]

@@ -29,10 +29,10 @@ class TagAdmin(CommonInfo):
 
 class PostAdmin(CommonInfo):
     form = PostAdminForm
-    list_display = ('id', 'title', 'slug', 'created_at', 'category', 'get_photo')
+    list_display = ('id', 'title', 'slug', 'created_at', 'category', 'get_photo', 'views')
     list_display_links = ('id', 'title', 'slug')
     search_fields = ('title',)
-    list_filter = ('category',)
+    list_filter = ('category', 'tags')
     readonly_fields = ('views', 'created_at', 'get_photo')
     fields = ('title', 'slug', 'category', 'tags', 'content', 'photo', 'get_photo', 'views', 'created_at')
 

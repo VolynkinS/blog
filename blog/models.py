@@ -37,6 +37,9 @@ class Category(CommonInfo):
 
 
 class Tag(CommonInfo):
+    def get_absolute_url(self):
+        return reverse_lazy('blog:tag', kwargs={'slug': self.slug})
+
     class Meta(CommonInfo.Meta):
         verbose_name_plural = 'Tags'
 
@@ -51,7 +54,7 @@ class Post(CommonInfo):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Date of creation')
 
     def get_absolute_url(self):
-        return reverse_lazy('blog:post', kwargs={'post_id': self.pk})
+        return reverse_lazy('blog:view_post', kwargs={'slug': self.slug})
 
     class Meta:
         ordering = ['-created_at']
